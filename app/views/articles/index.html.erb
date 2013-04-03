@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <tbody>
+    <% num = 0 %>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= num+=1 %></td>
+      <td><%= link_to "#{article.title}", article.link %></td>
+      <td><%= article.points %></td>
+      <td><button class="btn btn-mini btn-primary" type="button">Up</button></td>
+      <td><%= link_to 'Show', article %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
