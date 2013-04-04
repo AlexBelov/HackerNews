@@ -6,7 +6,12 @@
       <td><%= num+=1 %></td>
       <td><%= link_to "#{article.title}", article.link %></td>
       <td><%= article.points %></td>
-      <td><button class="btn btn-mini btn-primary" type="button">Up</button></td>
+      <td>
+        <%= form_for article, :method => :put do |f| %>
+          <%= f.hidden_field :points, :value => article.points + 1 %>
+          <%= f.submit "Up"%>
+        <% end %>
+      </t>
       <td><%= link_to 'Show', article %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>

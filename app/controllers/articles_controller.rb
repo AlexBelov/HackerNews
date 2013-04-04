@@ -17,13 +17,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def up
-    @article = Article.find(params[:id])
-    @article.points += 1
-    @article.update
-    redirect_to '/articles'
-  end
-
   # GET /articles/1/edit
   def edit
   end
